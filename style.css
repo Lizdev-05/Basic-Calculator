@@ -106,7 +106,7 @@ main .screen{
         width: 70vw;
         height: 950px;
         top: 200px;
-      margin-bottom: 20px;
+        margin-bottom: 20px;
       
      
 }
@@ -219,7 +219,7 @@ main .screen{
       height: 500px;
       top: 20px;
       margin-bottom: 40px;
-      float: center;
+   
       
      
 }
@@ -229,7 +229,7 @@ main .screen{
     height: 50px;
     margin: 7px;
     font-size: 15px;
-    float: center;
+    float: none;
     border-radius: 50%;
    
 }
