@@ -103,10 +103,28 @@ main .screen{
     }
 
     .calculator{
-        width: 320px;
-        height: 520px;
-        top: 50px;
+        width: 70vw;
+        height: 950px;
+        top: 200px;
+      margin-bottom: 20px;
+      
+     
+}
+
+.operator, .number, .empty{
+      width: 120px;
+      height: 120px;
+      margin: 20px;
+      float: none;
+      font-size: 35px;
+      border-radius: 50%;
+     
+  
   }
+
+  main .screen{
+    height: 100px;
+}
   }
   
   @media screen and (max-width: 900px ) {
