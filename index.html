@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+             <!-- <div id="history">
+                    <p id="history-value"></p>
+                </div>
+                <div id="output">
+                    <p id="output-value"></p>
+                </div> -->
+            <div class="screen-value"> 
+                <main>
+                    <div class="screen"></div>
+            <!-- <input type="text" class="screen" value=""/> -->
+        </main>
+            
+            </div>
+
+            <section id="keyboard">
+                <div class="box-one">
+                    
+                    <button class="btn delete operator">CE</button>
+                    <button class="btn  number operator">%</button>
+                    <button class="btn clear operator">C</button>
+                    <button class="btn  equal-to operator">=</button>
+                    
+                </div>
+                <div class="box-two">
+                    <button class="btn number">7</button>
+                    <button class="btn number">8</button>
+                    <button class="btn number">9</button>
+                    <button class="btn number operator">*</button>
+                </div>
+                <div class="box-three">
+                    <button class="btn number">4</button>
+                    <button class="btn number">5</button>
+                    <button class="btn number">6</button>
+                    <button class="btn number  operator">-</button>
+                </div>
+                <div class="box-four">
+                    <button class="btn number">1</button>
+                    <button class="btn number">2</button>
+                    <button class="btn number">3</button>
+                    <button class="btn number operator">+</button>
+                </div>
+                <div class="box-four">
+                    <button class="btn  number">00</button>
+                    <button class="btn number">0</button>
+                    <button class="btn number operator dot">.</button>
+                    
+                    <button class="btn number operator">/</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    const screen = document.querySelector(".screen");
+    const btns = document.querySelectorAll(".btn");
+    const clear1 = document.getElementsByClassName("delete")
+    
+
+    let haveDot = false;
+//   function getHistory(){
+//  return document.getElementById("history-value").innerHTML;
+//   }
+ 
+//   function printHistory(num){
+//   document.getElementById("history-value").innerHTML=num;
+//   }
+
+//   function getOutput(){
+//       return document.getElementById("outpu-value").innerHTML;
+//   }
+
+//   function printOutput(){
+//   document.getElementById("history-value").innerHTML=value(btn);
+//   }
+
+   
+btns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            const styles = event.currentTarget.classList;
+
+            if (styles.contains("number")){
+               
+                
+                let number = btn.textContent;
+                screen.textContent += number;
+            } else if (styles.contains("equal-to")){
+                let value = eval(screen.textContent);
+                screen.textContent = value;
+            } else if (styles.contains("delete")){
+               const answer = screen.textContent.slice(0, -1)
+             screen.textContent = answer;
+            } else if (styles.contains("clear")){
+                screen.textContent = ""
+            } if (screen.textContent === "." && !haveDot){
+                haveDot = true;
+            } else if (screen.textContent === "."  && haveDot){
+                return;
+            }
+
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // btns.forEach((btn) => {
+    //     btn.addEventListener("click", (event) => {
+    //         const styles = event.currentTarget.classList;
+
+    //         if (styles.contains("number")){
+    //             if (screen.value <= 0){
+    //               screen.value ="";
+    //             }
+
+    //             let number = btn.textContent;
+    //             screen.value += number;
+    //         } else if (styles.contains("equal-to")){
+    //             let value = eval(screen.value);
+    //             screen.value = value;
+    //         } else if (styles.contains("clear")){
+    //             screen.value = 0;
+            
+    //         } else if (styles.contains("delete")){
+               
+
+    //         //   const answer = screen.value.slice(0, -1)
+    //         //  screen.value = answer;
+    //         }
+    //     });
+    // });
+</script>
+</html>
